@@ -39,3 +39,24 @@ The subquery counts bookings per user by referencing the outer query (u.user_id)
 Only users with more than 3 bookings are returned.
 
 This is a correlated subquery because it depends on the outer query for each row.
+
+
+Total Number of Bookings Per User (Using COUNT + GROUP BY)
+
+Explanation:
+
+This counts all bookings per user.
+
+LEFT JOIN ensures even users with zero bookings are included.
+
+ Rank Properties by Total Bookings (Using RANK window function)
+
+Explanation:
+
+Uses RANK() to rank properties based on booking counts.
+
+LEFT JOIN ensures properties with zero bookings are considered.
+
+GROUP BY aggregates bookings per property.
+
+
