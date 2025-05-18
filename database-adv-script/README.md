@@ -16,3 +16,26 @@
 All users (with or without bookings),
 
 All bookings (with or without a linked user).
+
+
+Subqueries
+
+Non-Correlated Subquery
+
+Explanation:
+
+The subquery calculates the average rating per property.
+
+The outer query filters properties where property_id appears in the list of those with an average rating > 4.0.
+
+This is non-correlated because the subquery runs independently of the outer query.
+
+Correlated Subquery
+
+Explanation:
+
+The subquery counts bookings per user by referencing the outer query (u.user_id).
+
+Only users with more than 3 bookings are returned.
+
+This is a correlated subquery because it depends on the outer query for each row.
